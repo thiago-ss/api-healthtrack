@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HealthTrackModelStoreContainer" CdmEntityContainer="HealthTrackDB2">
+    <EntitySetMapping Name="alimen">
+      <EntityTypeMapping TypeName="HealthTrackModel.alimen">
+        <MappingFragment StoreEntitySet="alimen">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ExProteinas" ColumnName="ExProteinas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Altura">
+      <EntityTypeMapping TypeName="HealthTrackModel.Altura">
+        <MappingFragment StoreEntitySet="Altura">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Altura1" ColumnName="Altura" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="DataRegistro" ColumnName="DataRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Atividade">
+      <EntityTypeMapping TypeName="HealthTrackModel.Atividade">
+        <MappingFragment StoreEntitySet="Atividade">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Atividade1" ColumnName="Atividade" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="DataRegistro" ColumnName="DataRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comida">
+      <EntityTypeMapping TypeName="HealthTrackModel.Comida">
+        <MappingFragment StoreEntitySet="Comida">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Comida1" ColumnName="Comida" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="DataRegistro" ColumnName="DataRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NutricionistasParcas">
+      <EntityTypeMapping TypeName="HealthTrackModel.NutricionistasParcas">
+        <MappingFragment StoreEntitySet="NutricionistasParcas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Peso">
+      <EntityTypeMapping TypeName="HealthTrackModel.Peso">
+        <MappingFragment StoreEntitySet="Peso">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Peso1" ColumnName="Peso" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="DataRegistro" ColumnName="DataRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PressaoArterial">
+      <EntityTypeMapping TypeName="HealthTrackModel.PressaoArterial">
+        <MappingFragment StoreEntitySet="PressaoArterial">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PressaoArterial1" ColumnName="PressaoArterial" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="DataRegistro" ColumnName="DataRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="HealthTrackModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Idade" ColumnName="Idade" />
+          <ScalarProperty Name="Genero" ColumnName="Genero" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

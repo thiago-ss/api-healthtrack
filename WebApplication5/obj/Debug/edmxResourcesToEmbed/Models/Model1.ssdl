@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HealthTrackModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="alimen">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ExProteinas" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Altura">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Altura" Type="int" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" />
+    <Property Name="DataRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Atividade">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Atividade" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" />
+    <Property Name="DataRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Comida">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Comida" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" />
+    <Property Name="DataRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="NutricionistasParcas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telefone" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Peso">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Peso" Type="int" Nullable="false" />
+    <Property Name="IdUsuario" Type="int" />
+    <Property Name="DataRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PressaoArterial">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PressaoArterial" Type="int" />
+    <Property Name="IdUsuario" Type="int" />
+    <Property Name="DataRegistro" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Idade" Type="int" Nullable="false" />
+    <Property Name="Genero" Type="varchar" MaxLength="200" />
+    <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Senha" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Altura__IdUsuari__32E0915F">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Altura" Type="Self.Altura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Altura">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Atividade__IdUsu__2A4B4B5E">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Atividade" Type="Self.Atividade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Atividade">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comida__IdUsuari__2D27B809">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Comida" Type="Self.Comida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comida">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Peso__IdUsuario__300424B4">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Peso" Type="Self.Peso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Peso">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PressaoAr__IdUsu__35BCFE0A">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="PressaoArterial" Type="Self.PressaoArterial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PressaoArterial">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HealthTrackModelStoreContainer">
+    <EntitySet Name="alimen" EntityType="Self.alimen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Altura" EntityType="Self.Altura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Atividade" EntityType="Self.Atividade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comida" EntityType="Self.Comida" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NutricionistasParcas" EntityType="Self.NutricionistasParcas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Peso" EntityType="Self.Peso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PressaoArterial" EntityType="Self.PressaoArterial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Altura__IdUsuari__32E0915F" Association="Self.FK__Altura__IdUsuari__32E0915F">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Altura" EntitySet="Altura" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Atividade__IdUsu__2A4B4B5E" Association="Self.FK__Atividade__IdUsu__2A4B4B5E">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Atividade" EntitySet="Atividade" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comida__IdUsuari__2D27B809" Association="Self.FK__Comida__IdUsuari__2D27B809">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Comida" EntitySet="Comida" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Peso__IdUsuario__300424B4" Association="Self.FK__Peso__IdUsuario__300424B4">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Peso" EntitySet="Peso" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PressaoAr__IdUsu__35BCFE0A" Association="Self.FK__PressaoAr__IdUsu__35BCFE0A">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="PressaoArterial" EntitySet="PressaoArterial" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
